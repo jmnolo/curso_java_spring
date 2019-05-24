@@ -15,10 +15,14 @@ public class ProbandoAnimales {
     
     public static void probarAbstractas(){
         Animal unTucan = new Tucan("Turigualpa", 15.8f);
-        Canario lolo = new Canario("Lolo", 1.2f);
         unTucan.mover();
+        
+        Canario lolo = new Canario("Lolo", 1.2f);
+        
         ((Tucan) unTucan).ponerHuevos();
+        
         System.out.println(((Tucan) unTucan).esPadreDE(lolo));
+        System.out.println(lolo.esPadreDE(((Tucan) unTucan)));
         
         /*Mascota miMascota = new Mascota(0, true, true, "nombre", 0) { // Implementa el método en la llamada al ser abstracta.
             @Override
@@ -39,18 +43,26 @@ public class ProbandoAnimales {
         
         TortugaNinja michelangeloAnimalATortuga = ((TortugaNinja) michelangelo); //Casting explicito de Animal a TortugaNinja.
         michelangeloAnimalATortuga.cazar("PIZZA");
-        
-        michelangelo.volar(); //Aquí para el programa con la excepción.
-        
-        
+        try{
+            michelangelo.volar(); //Aquí para el programa con la excepción.
+        } catch (Exception ex) {
+            // ex.getStackTrace(); // Pila de mensajes de error.
+            System.err.println(ex.getMessage());
+        } finally {
+            System.out.println("Siempre me ejecuto. Cerramos recursos.\n"); // "\n SALTO DE LÍNEA +.
+        }
         
         lolo.mover();
-        lolo.volar(); 
+        lolo.volar();
         lolo.comer();
         lolo.ponerHuevos();
         Cangrejo sebastian = new Cangrejo("Sebastian",2.4f);
         sebastian.mover();
-        sebastian.volar(); //Aquí para el programa con la excepción.
+        try {
+            sebastian.volar(); //Aquí para el programa con la excepción.
+        } catch (UnsupportedOperationException ex) {
+            System.err.println(ex.getMessage());
+        }
         sebastian.comer();
         
     }

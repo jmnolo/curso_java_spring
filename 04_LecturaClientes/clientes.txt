@@ -1,0 +1,5 @@
+1, "uno", "uno@mail.com", 0, true, 'a', "uno"
+2, "dos", "dos@mail.es", 0, true, 'b', "dos"
+3, "tres", "tres@mail.es", 0, true, 'c', "tres", 70
+4, "cuatro", "cuatro@mail.es", 0, true, 'd', "cuatro", 45
+5, "cinco", "cinco@mail.es", 0, true, 'e', "cinco"

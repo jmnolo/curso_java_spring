@@ -1,0 +1,4 @@
+Línea primera
+Línea segunda
+Línea tercera
+FIN DE FICHERO

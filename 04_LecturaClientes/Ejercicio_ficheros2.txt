@@ -1,0 +1,5 @@
+﻿ 1,Ana,aaaa@aaaa.com,0,true,A,aaaa
+2,Juan,jjjj@aaaa.com,0,true,B,bbbb
+3,Luis,lll@aaaa.com,0,false,C,cccc
+4,Bea_invitada,bbb@aaa.com,0,true,D,dddd
+4,Juana_invitada,jjjj@aaa.com,0,true,E,eeee

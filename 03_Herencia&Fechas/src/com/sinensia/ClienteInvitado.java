@@ -41,5 +41,11 @@ public class ClienteInvitado extends Cliente {
         super.mostrar(); // Llama al método mostrar del padre.
         System.out.println(" Duración Máxima: "+ duracionMax);
     }
+
+    @Override
+    public String toString() {
+        return "ClienteInvitado{" + "duracionMax=" + duracionMax + '}';
+    }
+    
     
 }

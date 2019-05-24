@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Formulario registro Cliente</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Formulario registro Cliente</h1>
+        <form name="form1" method="get" action="registro"> <!--registro corresponde a la url del web.xml-->
+            <table>
+                <tr>
+                    <td>Nombre:</td>
+                    <td><input type="text" name="nombre" id="nombre" size="30"
+                               value="fulanito"/></td>
+                </tr>
+                <tr>
+                    <td>Edad:</td>
+                    <td><input type="number" name="edad" id="edad" size="4"
+                               value="14"/></td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td><input type="email" name="email" id="email" size="30"
+                               value="fulanito@ful.es"/></td>
+                </tr>
+                <tr>
+                    <td>Activo:</td>
+                    <td><input type="checkbox" name="activo" id="activo" checked="checked"/>Activo</td>
+                </tr>
+            </table>
+            <input type="submit" value="Registrarse"/>
+        </form>
+    </body>
+</html>

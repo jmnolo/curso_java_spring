@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Otros campos FORM</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Otros campos FORM</h1>
+        <form action="#" method="post" enctype="text/plain"> <!--action: donde envía al pulsar submit.-->
+            <input type="button" value="Boton JS" onclick="alert('¡Hola qué pacha!')"/>
+            <!--on... : acciones / dentro funciones JS (ejemplo: alert();).-->
+            <input type="button" value="Boton JS externo" onclick="mostrarMensaje('¡Hola de nuevo!')"/>
+            <!-- Si tenemos ya comillas dobles dentro es mejor poner comillas simples, y al revés.-->
+            <!-- Para utilizar funciones js necesitamos llamar al archivo .js en el apartado script.-->
+            <br/><br/>
+            <label for="fichero">Fichero:</label> <!--for: Vincula la etiqueta con el campo que le indiquemos-->
+            <input type="file" id="fichero" name="fichero"/>
+            <br/><br/>
+            <label for="fecha">Fecha:</label>
+            <input type="datetime" id="fecha" name="fecha"/>
+            <br/><br/>
+            <label for="passwd">Password:</label>
+            <input type="password" id="passwd" name="passwd"/>
+            <br/><br/>
+            <label for="passwd-encriptada">Campo no visible:</label>
+            <input type="hidden" id="passwd-encriptada" name="passwd-encriptada" value="qweoiqwjfgvfnx"/> <!--No aparece el valor-->
+            <br/><br/>
+            
+            <br/>Otros campos:<br/>
+            <label for="dirección-serv">Dirección del servidor:</label>
+            <input type="url" id="dirección-serv" name="dirección-serv"/>
+            <br/><br/>
+            <label for="rango">Rango:</label>
+            <input type="range" id="rango" name="rango" min="-50" max="50"/>
+            <br/><br/>
+            <label for="telefono">Telefono:</label>
+            <input type="tel" id="telefono" name="telefono"/>
+            <br/><br/>
+            <label for="busqueda">Búsqueda:</label>
+            <input type="search" id="busqueda" name="busqueda"/>
+            <br/><input type="submit" id="enviar" name="enviar" value="Enviar"/>
+            <br/><br/>
+            
+            <br/>Otros campos especiales:<br/>
+            CheckBox:
+            <input type="checkbox" checked="checked" name="dirección-serv"/>
+            <br/><br/>
+            Radio-Opciones:
+                <input type="radio" id="tipoCliente" name="tipoCliente" value="ClienteNormal"/>Cliente Normal
+                <input type="radio" id="tipoClienteInv" name="tipoCliente" value="ClienteInvitado" checked/>Cliente Invitado
+                <input type="radio" id="tipoClienteVIP" name="tipoCliente" value="ClienteVIP"/>Cliente VIP
+                <!--Al tener el mismo "name" pertenecen al mismo campo.-->
+            <br/><br/>
+            Menu desplegable:
+            <select id="frecuencia" name="name" multiple="">
+                <option value="1">Una vez al día.</option> <!--El valor es "1"-->
+                <option value="2">Varias veces al día.</option>
+                <option value="3">Varias veces a la semana.</option>
+                <option value="4">Varias veces al mes.</option>
+            </select>
+            <br/><br/>
+            Comentarios o mensaje:<br/>
+            <textarea id="comentarios" cols="30" rows="6" name="comentarios" 
+                      placeholder="Cuenta lo que te apetezca, que no te haremos ni caso."></textarea>
+        </form>
+        <table border="2">
+            <caption>Lista de vainas:</caption>
+            <tr> <!--FILA-->
+                <td>Vaina:</td> <!--COLUMNA-->
+                <td>Peine</td>
+                <td>15 €</td>
+            </tr>
+            <tr> <!--FILA-->
+                <td>Vaina:</td> <!--COLUMNA-->
+                <td>Quitapelos</td>
+                <td>50 €</td>
+            </tr>
+            <tr> <!--FILA-->
+                <td>Vaina:</td> <!--COLUMNA-->
+                <td>Un choche</td>
+                <td>500 €</td>
+            </tr>
+        </table>
+        <br/>
+        <img alt="Texto alternativo IMG" 
+                 src="images/portada_normal_recorte1.jpg"
+                 style="width: 50%; height: 35%;"/> <!--CSS-->
+        <script src="js/04_mascampos.js"></script>
+    </body>
+</html>

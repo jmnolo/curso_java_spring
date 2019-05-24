@@ -9,29 +9,30 @@ package com.sinensia;
  *
  * @author Admin
  */
-public class Producto {
-    private int id;
+public class Producto extends Entidad {
+    //private long id; // Obtiene el ID de Entidad.
     private String nombre;
     private int stock;
     private double precio;
 
-    public Producto() {
-    }
+    /*public Producto() {
+    }*/
 
-    public Producto(int id, String nombre, int stock, double precio) {
-        this.id = id;
+    public Producto(long id, String nombre, int stock, double precio) {
+        super(id); //Llamamos al padre y eliminamos los métodos get y set.
+        //this.id = id;
         this.nombre = nombre;
         this.stock = stock;
         this.precio = precio;
     }
 
-    public int getId() {
+    /*public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
-    }
+    }*/
 
     public String getNombre() {
         return nombre;
@@ -55,6 +56,11 @@ public class Producto {
 
     public void setPrecio(double precio) {
         this.precio = precio;
+    }
+
+    @Override
+    public String toString() {
+        return "Producto{" + "id=" + id + ", nombre=" + nombre + ", stock=" + stock + ", precio=" + precio + '}';
     }
     
 }

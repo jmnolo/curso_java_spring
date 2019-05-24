@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>OBJETOS JS</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <input id="btn" type="button" value="Probar"/>
+        <div id="divDatos">TODO write content</div>
+        <script>
+            function mostrarDatos() {
+                var divDatos = document.getElementById("divDatos");
+                divDatos.innerHTML = "Datos de objetos.";
+                divDatos.innerHTML += "..";
+                
+                var objCliente = new Object();
+                objCliente.nombre = "Juan";
+                objCliente.edad = 27;
+                objCliente["activo"] = true; //Otra manera de añadir datos a objeto. Similar a Mapa(Java).
+                
+                divDatos.innerHTML += "Nombre: "+objCliente["nombre"] +" Activo: "+objCliente.activo + "</br>";
+                
+                objCliente.toString = function() {  // Sobreescribir método toString();
+                    return " Nombre: "+objCliente["nombre"] +" Edad: "+ this["edad"];
+                };
+                
+                divDatos.innerHTML += objCliente.toString() + "</br>";
+                
+                var funATexto = new Function("param", "return this.nombre +\"-\"+ param"); //Crear un objeto de tipo función al igual que con "function_()" o "=function()".
+                funATexto.propiedadSinSentido = "No tengo razón";
+                objCliente.aTexto = funATexto; // Llama a la función "funATexto", no la invoca. Llamar sirve para asignar esa función a algo.
+                divDatos.innerHTML += objCliente.aTexto()+ "</br>"; // Aquí sí se invoca, y al no pasar parámetro devuelve undefined.
+                
+                
+                var Cliente = function Cliente(nom, edad){ //Funciona como constructor por el código interno que tiene 
+                    this.nombre = nom; this.edad = edad;   //y porque después se le llama con un new.
+                    this.enTexto = function () { //Funciona como toString.
+                        return " Cliente: "+this.nombre +" Edad: "+ this.edad;
+                    };
+                }; // = function Cliente(x,y){} (Sin ;)
+                
+                var miCliente = new Cliente("Ana", 30);
+                divDatos.innerHTML += miCliente.enTexto()+ "</br>";
+                
+                //JSON
+                var otroCliente = {
+                    "nombre" : "Luis",
+                    "edad" : 51,
+                    "activo" : true,
+                    "enTexto" : function(){ return "Cli: " + this.nombre}
+                }; //Esto es lo mismo que poner "new Object();"
+                divDatos.innerHTML += otroCliente.enTexto() + " > "
+                        + otroCliente.edad;
+                // Como es como un HashMap, otroCliente se puede recorrer con un bucle for:
+                for (var clave in otroCliente){
+                    divDatos.innerHTML += "</br>" + otroCliente[clave];
+                }
+                
+            }
+            var btn = document.getElementById("btn");
+            // btn.onclick = mostrarDatos; /*Llama a la función al hacer click. Sin invocar "()".*/
+            btn.addEventListener("click", mostrarDatos); /*Sirve para lo mismo que la línea de arriba.*/
+        </script>
+    </body>
+</html>

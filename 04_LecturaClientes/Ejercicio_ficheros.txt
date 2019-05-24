@@ -1,0 +1,11 @@
+﻿Generar un HashMap de clientes a partir del siguiente fichero,
+si el 5º campo es un número, será invitado (y este la duración máxima).
+
+1,Ana,aaaa@aaaa.com,0,true,A,aaaa
+2,Juan,jjjj@aaaa.com,0,true,B,bbbb
+3,Luis,lll@aaaa.com,0,false,C,cccc
+-----
+4,Bea invitada,bbb@aaa.com,0,true,D,dddd,10
+4,Juana invitada,jjjj@aaa.com,0,true,E,dddd,20
+--
+5,Antonio VIP,rrr@aaa.com,1,false,F,eeee,descuentos

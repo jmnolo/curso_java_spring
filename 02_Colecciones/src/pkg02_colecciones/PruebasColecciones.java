@@ -1,10 +1,12 @@
 
 package pkg02_colecciones;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.TreeMap;
 
 /**
  *
@@ -36,6 +38,19 @@ public class PruebasColecciones {
                     Cliente cliente = parClaveValor.getValue();
                     System.out.println("Cliente: " + cliente.getNombre());
                 }
+        
+        // Nuevo ejemplo 13-05-19.  **Utilizando tipos genéricos**
+        Map<Date, Cliente> mapClientesFecha = new TreeMap<Date, Cliente>();
+        mapClientesFecha.put(new Date(84, 4, 9), Jose);
+        mapClientesFecha.put(new Date(90, 6, 30), Pepe);
+        mapClientesFecha.put(new Date(84, 5, 28), diccClientes.get("b2")); // Obtenemos del otro map.
+        System.out.println("\n\n*****Mapa ordenado por fecha*****\n");
+        for (Map.Entry<Date, Cliente> entrada : mapClientesFecha.entrySet()) {
+            Date key = entrada.getKey();
+            Cliente valor = entrada.getValue();
+            System.out.println("Cliente: Clave "+key.toString()+", Nombre: "+valor.toString());
+            
+        }
     }
     
     

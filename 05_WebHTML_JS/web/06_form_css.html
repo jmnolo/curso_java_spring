@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es"> <!--Raiz-->
+    <head> <!--Cabecera-->
+        <meta charset="UTF-8"/>
+        <title>Formularios CSS</title>
+        <!--Etiqueta style para incluir CSS en este documento-->
+        <link rel="stylesheet" type="text/css" href="css/06_form_css.css"/>
+    </head>
+    <body> <!--Cuerpo visible en ventana-->
+        <div class="div margen-lateral">
+            <h1 class="titulo">Formularios CSS</h1>
+        </div>
+        <p></p> <!--Párrafo-->
+        <div class="div margen-lateral">
+            <form class="form" action="mailto:correo@empresa.com"
+                  method="post" enctype="text/plain">
+                <div class="formdiv"> <!--div: conjuntos.-->
+                    <label class="label" for="nombre">Nombre:</label> <!-- for: para decirle a que etiqueta (id) corresponde-->
+                    <input class="input" type="text" name="nombre" id="nombre" size="30" maxlength="30"
+                           placeholder="Introduzca su nombre."/> <!--maxlenght limita caracteres-->
+                </div>
+                <div class="formdiv">
+                    <label class="label" for="email">Email:</label>
+                    <input class="input" type="email" name="email" id="email" size="30" maxlength="255"/>
+                </div>
+                <div class="formdiv">
+                    <label class="label" for="edad">Edad:</label>
+                    <input class="input" type="number" name="edad" id="edad" min="18" max="80" step="5"/> <!--step: salto de 5 en 5-->
+                </div>
+                <div class="formdivbot">
+                    <input class="boton botonok" type="submit" value="Enviar formulario"/>
+                    <input class="boton botonno" type="reset" value="Borrar formulario"/>
+                </div>
+            </form>
+        </div>
+        <!--Script: Siempre al final del body-->
+        <script> /*Script: Siempre al final del body*/
+            var texto = "Un texto cualquiera";
+            var numero = 10.3434;
+            var campoNombre = document.getElementById("nombre");
+            campoNombre.value = "";
+            document.getElementById("email").setAttribute("placeholder", "Introduzca su email.");
+            // placeholder puede editarse aquí o en el código HTML.
+            document.getElementById("email").value = "";
+            document.getElementById("edad").value = "30";
+        </script>
+    </body>
+</html>

@@ -4,9 +4,9 @@ package com.sinensia;
  *
  * @author Admin
  */
-public class Cliente {
+public class Cliente extends Entidad implements Comparable<Cliente> {
     // Variables protegidas para que puedan acceder sus clases hijas.
-    protected long id;
+    //protected long id; // Obtiene el ID de Entidad.
     protected String nombre;
     protected String email;
     protected int fechaNac;
@@ -14,13 +14,14 @@ public class Cliente {
     protected char genero;
     protected String password;
 
-    public Cliente() {
+    /*public Cliente() {
         
-    }
+    }*/
 
     public Cliente(long id, String nombre, String email, int fechaNac, boolean activo, char genero, String password)
     /*throws Exception /*Incluimos la excepción.*/{
-        this.id = id;
+        super(id); //Llamamos al padre y eliminamos los métodos get y set.
+        //this.id = id;
         // Validación de datos:
         if (nombre == null || nombre == ""){
             //throw new Exception("Nombre de cliente inválido.");
@@ -34,13 +35,13 @@ public class Cliente {
         this.password = password;
     }
 
-    public long getId() {
+    /*public long getId() {
         return id;
     }
 
     public void setId(long id) {
         this.id = id;
-    }
+    }*/
 
     public String getNombre() {
         return nombre;
@@ -102,14 +103,20 @@ public class Cliente {
     }
 
     
-    
-    
-    
-    
     @Override
     public String toString() {
         return "Cliente{" + "id=" + id + ", nombre=" + nombre + ", email=" + email + ", fechaNac=" + fechaNac + ", activo=" + activo + ", genero=" + genero + ", password=" + password + '}';
     }
 
+    
+    @Override
+    public int compareTo(Cliente otroCliente) {
+        // Si los nombres son iguales comparamos por email.
+        if (nombre.compareTo(otroCliente.nombre)==0){
+            return email.compareTo(otroCliente.email);
+        } else { // Si los nombres no son iguales los comparamos.
+            return nombre.compareTo(otroCliente.nombre);
+        }
+    }
     
 }

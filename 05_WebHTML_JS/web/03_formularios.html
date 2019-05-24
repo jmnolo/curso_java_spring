@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es"> <!--Raiz-->
+    <head> <!--Cabecera-->
+        <meta charset="UTF-8"/>
+        <title>Formularios</title>
+        <!--Etiqueta style para incluir CSS en este documento-->
+        <style type="text/css">
+            body{
+                background-color: #AABBBB;
+                padding: 20px;
+                color: white;
+            }
+            form{
+                background-color: #AAFFAA;
+                padding: 20px;
+                color: black;
+            }
+        </style>
+    </head>
+    <body> <!--Cuerpo visible en ventana-->
+        <h1>Formularios</h1> 
+        <p></p> <!--Párrafo-->
+        <form action="mailto:correo@empresa.com"
+              method="post" enctype="text/plain">
+            <label for="nombre">Nombre:</label> <!-- for: para decirle a que etiqueta (id) corresponde-->
+            <input type="text" name="nombre" id="nombre" size="30" maxlength="30"
+                   placeholder="Introduzca su nombre."/> <!--maxlenght limita caracteres-->
+            <br/><br/>
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" size="30" maxlength="255"/>
+            <br/><br/>
+            <label for="edad">Edad:</label>
+            <input type="number" name="edad" id="edad" min="18" max="80" step="5"/> <!--step: salto de 5 en 5-->
+            <br/><br/>
+            <input type="submit" value="Enviar formulario"/>
+            <input type="reset" value="Borrar formulario"/>
+        </form>
+        <!--Script: Siempre al final del body-->
+        <script> /*Script: Siempre al final del body*/
+            var texto = "Un texto cualquiera";
+            var numero = 10.3434;
+            var campoNombre = document.getElementById("nombre");
+            campoNombre.value = "";
+            document.getElementById("email").setAttribute("placeholder", "Introduzca su email.");
+            // placeholder puede editarse aquí o en el código HTML.
+            document.getElementById("email").value="";
+            document.getElementById("edad").value = "30";
+        </script>
+    </body>
+</html>
