@@ -4,6 +4,7 @@ import com.sinensia.modelo.Cliente;
 //import com.sinensia.modelo.dao.InterfazDAO;
 //import com.sinensia.modelo.dao.ClienteDAO;
 import com.sinensia.modelo.dao.MySQLClienteDAO;
+import java.util.List;
 
 /**
  *
@@ -99,5 +100,9 @@ public class ServicioClientes {
 
     public void eliminar(String email) {
         eliminar(obtenerUno(email).getId());
+    }
+    
+    public List<Cliente> obtenerTodos() {
+        return dao.obtenerTodos();
     }
 }

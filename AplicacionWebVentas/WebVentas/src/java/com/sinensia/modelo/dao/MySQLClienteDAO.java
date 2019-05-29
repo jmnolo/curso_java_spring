@@ -233,9 +233,9 @@ public class MySQLClienteDAO implements InterfazDAO<Cliente> {
             // Pasamos los valores:
             sentencia.setString(1, nuevoValor.getNombre());
             sentencia.setString(2, nuevoValor.getEmail());
-            sentencia.setString(3, nuevoValor.getPassword());
-            sentencia.setShort(4, nuevoValor.getEdad());
-            sentencia.setShort(5, nuevoValor.getActivo());
+            sentencia.setShort(3, nuevoValor.getEdad());
+            sentencia.setShort(4, nuevoValor.getActivo());
+            sentencia.setString(5, nuevoValor.getPassword());
             sentencia.setInt(6, nuevoValor.getId());
             // Ejecutamos la sentencia:
             sentencia.executeUpdate();
